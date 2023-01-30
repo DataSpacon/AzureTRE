@@ -45,5 +45,5 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           git checkout "v${{ github.event.inputs.version }}"
-          mike deploy --push --update-aliases ${{ github.event.inputs.version }} latest-release
+          mike deploy --push --update-aliases ${{ github.event.inputs.version }} latest
 
