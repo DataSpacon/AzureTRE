@@ -43,5 +43,7 @@ jobs:
         run: mike deploy --push --update-aliases "${GITHUB_REF#refs/*/}" latest-release
       - name: Deploy the development docs
         if: ${{ github.event_name == 'workflow_dispatch' }}
-        run: mike deploy --push --update-aliases "${{ github.event.inputs.version }} latest-release
+        run: |
+          git checkout "v${{ github.event.inputs.version }}
+          mike deploy --push --update-aliases ${{ github.event.inputs.version }} latest-release
 
