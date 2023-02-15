@@ -152,7 +152,6 @@ async def test_airlock_review_vm_flow(setup_test_workspace, setup_test_airlock_i
 
 
 @pytest.mark.airlock
-@pytest.mark.extended
 @pytest.mark.timeout(35 * 60)
 async def test_airlock_flow(verify, setup_test_workspace) -> None:
     # 1. Get the workspace set up
